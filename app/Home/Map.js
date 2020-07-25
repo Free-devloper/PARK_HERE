@@ -13,16 +13,18 @@ class Map extends Component {
     error:null,
   }
   componentDidMount(){
-    Geolocation.getCurrentPosition((position)=>{
-      this.setState({
-        userlatitude:position.coords.latitude,
-        userlongitude:position.coords.longitude,
-        
-        error:null
-      })
-    })
+    this.getInitialLocation();
   }
-
+getInitialLocation(){
+  Geolocation.getCurrentPosition((position)=>{
+    this.setState({
+      userlatitude:position.coords.latitude,
+      userlongitude:position.coords.longitude,
+      error:null
+    })
+  })
+  console.log(this.state.userlatitude)
+}
     render() {
         return (
             <View style={{width:'100%', height:'100%'}}>
