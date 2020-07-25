@@ -17,11 +17,12 @@ class Map extends Component {
       this.setState({
         userlatitude:position.coords.latitude,
         userlongitude:position.coords.longitude,
+        
         error:null
       })
     })
   }
-  
+
     render() {
         return (
             <View style={{width:'100%', height:'100%'}}>
