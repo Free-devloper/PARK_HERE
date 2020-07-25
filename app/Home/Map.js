@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text,Image,View,StyleSheet } from 'react-native';
+import { Text,Image,View,StyleSheet, PermissionsAndroid } from 'react-native';
 import MapView, { PROVIDER_GOOGLE, Marker, Callout } from 'react-native-maps';
 import { Button } from 'react-native-paper';
 import { TouchableOpacity } from 'react-native-gesture-handler';
@@ -8,23 +8,22 @@ import { bindActionCreators } from 'redux';
 import Geolocation from '@react-native-community/geolocation';
 class Map extends Component {
   state={
-    userlatitude:33.6513127,
-    userlongitude:73.0767002,
+    userlatitude:null,
+    userlongitude:null,
     error:null,
   }
   componentDidMount(){
-    this.getInitialLocation();
+    Geolocation.getCurrentPosition(async(position)=>{
+      res=await position;
+      this.setState({
+        userlatitude:res.coords.latitude,
+        userlongitude:res.coords.longitude,
+        error:null
+      })
+    },error=>alert('Error',JSON.stringify(error)),
+    {enableHighAccuracy:true,timeout:20000,maximumAge:1000}
+    );
   }
-getInitialLocation(){
-  Geolocation.getCurrentPosition((position)=>{
-    this.setState({
-      userlatitude:position.coords.latitude,
-      userlongitude:position.coords.longitude,
-      error:null
-    })
-  })
-  console.log(this.state.userlatitude)
-}
     render() {
         return (
             <View style={{width:'100%', height:'100%'}}>
@@ -33,8 +32,8 @@ getInitialLocation(){
        provider={PROVIDER_GOOGLE} // remove if not using Google Maps
        style={styles.map}
        region={{
-         latitude:33.6513127,
-         longitude:73.0767002,
+         latitude:this.state.userlatitude|| 33.6513127,
+         longitude:this.state.userlongitude || 73.0767002,
          latitudeDelta: 0.015,
          longitudeDelta: 0.0121,
        }}
