@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Text,Image,View,StyleSheet, PermissionsAndroid } from 'react-native';
+import { Text,Image,View,StyleSheet,ActivityIndicator, PermissionsAndroid } from 'react-native';
 import MapView, { PROVIDER_GOOGLE, Marker, Callout } from 'react-native-maps';
-import { Button } from 'react-native-paper';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -12,23 +11,49 @@ class Map extends Component {
     userlongitude:null,
     error:null,
   }
+  watchID=null;
+  setgeolocation=null;
   componentDidMount(){
-    Geolocation.getCurrentPosition(async(position)=>{
-      res=await position;
+    Geolocation.getCurrentPosition((position)=>{
       this.setState({
-        userlatitude:res.coords.latitude,
-        userlongitude:res.coords.longitude,
+        userlatitude:position.coords.latitude,
+        userlongitude:position.coords.longitude,
         error:null
       })
-    },error=>alert('Error',JSON.stringify(error)),
-    {enableHighAccuracy:true,timeout:20000,maximumAge:1000}
+    },error=>{
+      console.log(error)
+      alert("Please Enable GPS services in your Phone Settings");
+    
+    },
+    {enableHighAccuracy:true,timeout:20000,maximumAge:5000}
     );
+    this.watchID=Geolocation.watchPosition(position=>{
+      console.log(position);
+      this.setState({
+        userlatitude:position.coords.latitude,
+        userlongitude:position.coords.longitude
+      })
+    })
+  }
+  componentWillUnmount() {
+    clearInterval(this.setgeolocation)
+    this.watchID != null && Geolocation.clearWatch(this.watchID);
   }
     render() {
+      if(this.state.userlongitude==null)
+      {
+        return(
+          <View style={styles.loading} >
+            <ActivityIndicator color="#0000ff"/>
+            </View>
+        )
+      }else{
         return (
             <View style={{width:'100%', height:'100%'}}>
      <MapView
        style={StyleSheet.absoluteFillObject}
+       showsUserLocation={true}
+       followsUserLocation={false}
        provider={PROVIDER_GOOGLE} // remove if not using Google Maps
        style={styles.map}
        region={{
@@ -45,10 +70,12 @@ class Map extends Component {
          latitude:parking[1].Location.latitude,
          longitude:parking[1].Location.longitude
        }}
+       onPress={()=>this.setState}
        >
          <Image source={require('../assets/images/pin_marker.png')} style={{ width: 30, height:30 }} />
          <Callout style={{width:130}} onPress={()=>this.props.navigation.navigate('Parking_Stack')}>
         <Text>{parking[1].name}</Text>
+      <Text style={{color:'black',opacity:0.5}}>{parking[1].Fees}Rs./hour</Text>
         <Text style={{color:'green'}}>{Object.keys(parking[1].slots).length} Spots available</Text>
                  <TouchableOpacity
                  ><Text style={{color:'red',fontSize:18,textAlign:'center',fontWeight:'bold'}}>Reserve a spot</Text></TouchableOpacity>
@@ -59,10 +86,17 @@ class Map extends Component {
    </View>
         );
     }
+    }
 }
 const styles = StyleSheet.create({
     container: {
       ...StyleSheet.absoluteFillObject,
+    },
+    loading:{
+      flex:1,
+      backgroundColor:'#fff',
+      alignItems:'center',
+      justifyContent:'center'
     },
     map: {
       ...StyleSheet.absoluteFillObject,

@@ -129,6 +129,12 @@ const saveuser= async(dataname,res)=>{
         Profilepic:'gs://parkme-88c9c.appspot.com/Users/Profilepic/avatar6.png',
         ...res
     }
-    const response = await axios.put(FIREBASEURL+`Users/${res.localId}.json`,data);
+    console.log(res);
+    try{
+    const response = await axios.put(FIREBASEURL+`Users/${res.localId}.json?auth=${res.idToken}`,data);
     return response;
+    }catch(error)
+    {
+        console.log(error.response);
+    }
 }

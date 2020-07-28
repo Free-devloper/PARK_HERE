@@ -11,6 +11,7 @@ import {
   Image,
   TouchableOpacity
 } from 'react-native';
+import DateTimePicker from '@react-native-community/datetimepicker';
 import ListView from 'deprecated-react-native-listview';
 import { ScrollView } from 'react-native-gesture-handler';
 
@@ -27,7 +28,6 @@ export default class Parkinglot extends Component {
       ]),
     };
   }
-
   render() {
     let i=1;
     return (
@@ -35,7 +35,6 @@ export default class Parkinglot extends Component {
         <View style={styles.container}>
             <Text style={{color:'green',alignSelf:'center'}}>Select date& time</Text>
             <View>
-            <TextInput style={{backgroundColor:'white',width:'70%',alignSelf:'center'}} placeholder='2020/06/08' value=''/>
             </View>
       <ListView enableEmptySections={true}
         dataSource={this.state.dataSource}

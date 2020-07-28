@@ -19,6 +19,8 @@ import { bindActionCreators } from 'redux';
         if(this.props.Markers.markers.data.toString()==='Error: Network Error')
         {
           this.setState({connection:false});
+        }else if(!this.props.Markers.markers.data){
+          this.setState({connection:false});
         }
         this.setState({loading:false});
   })
@@ -28,7 +30,7 @@ import { bindActionCreators } from 'redux';
       {
         return(
           <View style={styles.loading} >
-            <ActivityIndicator  size="large" color="#0000ff"/>
+            <ActivityIndicator color="#0000ff"/>
             </View>
         )
       }else if(!this.state.connection){

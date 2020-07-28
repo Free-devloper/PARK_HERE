@@ -1,5 +1,5 @@
 import React, {useState, Component } from 'react';
-import { TouchableOpacity, StyleSheet, Text, View, Alert,ActivityIndicator } from 'react-native';
+import { TouchableOpacity, StyleSheet, Text, View, Alert,ActivityIndicator, Image } from 'react-native';
 import NetInfo from "@react-native-community/netinfo";
 import Background from '../components/Background';
 import Header from '../components/Header';
@@ -119,6 +119,12 @@ const styles = StyleSheet.create({
     alignItems:'center',
     justifyContent:'center'
   },
+  loadinglogo:{
+    width:150,
+    height:50,
+    alignSelf:'center',
+  }
+  ,
   offlineContainer: {
     backgroundColor: '#b52424',
     height: 30,
@@ -137,7 +143,8 @@ class Login extends Component{
     haserros:false,
     errormsg:'none',
     isConnected:true,
-    errormesg:''
+    errormesg:'',
+    loadingflag:false
   }
   gotoHome(){
     //Replace here push with resetTo
@@ -156,8 +163,6 @@ class Login extends Component{
   }else{
       setTokens(this.props.User.auth,()=>{
         this.gotoHome();
-        // this.props.navigation.navigate('Apphome');
-        //this.setState({loading:false});
       })
     }
   }
@@ -166,9 +171,11 @@ class Login extends Component{
       this.setState({isConnected:state.isConnected})
     });
     this.setState({loading:true})
+    this.setState({loadingflag:true});
     getTokens((value)=>{
       if(value[0][1]===null){
-        this.setState({loading:false})
+        this.setState({loading:false});
+        this.setState({loadingflag:false});
       }else{
         this.props.autoSignIn(value[1][1]).then(()=>{
           if(!this.props.User.auth.token){
@@ -177,11 +184,12 @@ class Login extends Component{
               this.gotoHome();
             }else{
               this.setState({loading:false});
+              this.setState({loadingflag:false});
             }
           }else{
             setTokens(this.props.User.auth,()=>{
-              this.gotoHome();
               unsubscribe();
+              this.gotoHome();
               //this.props.navigation.navigate('Apphome');
             })
           }
@@ -196,7 +204,17 @@ class Login extends Component{
     {
       return(<MiniOfflineSign/>) 
     }
-    if(this.state.loading){
+    if(this.state.loadingflag){
+      return(
+        <View style={styles.loading}>
+          <Image
+          style={styles.loadinglogo}
+          source={require('./../assets/images/logo.png')}
+           />
+        <ActivityIndicator size="large" color="#0000ff"/>
+        </View>
+      )
+    }else if(this.state.loading){
       return(
         <View style={styles.loading}>
         <ActivityIndicator size="large" color="#0000ff"/>
