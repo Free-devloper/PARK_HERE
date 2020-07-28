@@ -33,9 +33,7 @@ export default class Parkinglot extends Component {
     return (
         <ScrollView>
         <View style={styles.container}>
-            <Text style={{color:'green',alignSelf:'center'}}>Select date& time</Text> 
-            <View>
-            </View>
+            <TextInput style={{alignSelf:"center",alignContent:"center"}} autoCompleteType="cc-exp-year" placeholder="select a date&time"/>
       <ListView enableEmptySections={true}
         dataSource={this.state.dataSource}
         renderRow={(service) => {
