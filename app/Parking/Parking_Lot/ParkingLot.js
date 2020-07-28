@@ -33,7 +33,7 @@ export default class Parkinglot extends Component {
     return (
         <ScrollView>
         <View style={styles.container}>
-            <Text style={{color:'green',alignSelf:'center'}}>Select date& time</Text>
+            <Text style={{color:'green',alignSelf:'center'}}>Select date& time</Text> 
             <View>
             </View>
       <ListView enableEmptySections={true}
