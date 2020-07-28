@@ -1,5 +1,5 @@
 import image from '../../assets/Parkingslot.png'
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import {
   StyleSheet,
   Text,
@@ -14,47 +14,45 @@ import {
 import DateTimePicker from '@react-native-community/datetimepicker';
 import ListView from 'deprecated-react-native-listview';
 import { ScrollView } from 'react-native-gesture-handler';
+const Parkinglot=(state,setState)=>  {
+  const [date, setDate] = useState(new Date(1598051730000));
+  const [mode, setMode] = useState('date');
+  const [show, setShow] = useState(false);
+  
+  const onChange = (event, selectedDate) => {
+    const currentDate = selectedDate || date;
+    setDate(currentDate);
+  };
 
+  const showMode = currentMode => {
+    setShow(true);
+    setMode(currentMode);
+  };
 
-export default class Parkinglot extends Component {
+  const showDatepicker = () => {
+    showMode('date');
+  };
 
-  constructor(props) {
-    super(props);
-    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
-    this.state = {
-      dataSource: ds.cloneWithRows([
-         {image: "../../assets/Available.png"},
-         {image: "../../assets/Available.png"},
-      ]),
-    };
-  }
-  render() {
-    let i=1;
+  const showTimepicker = () => {
+    showMode('time');
+  };
     return (
         <ScrollView>
         <View style={styles.container}>
-            <TextInput style={{alignSelf:"center",alignContent:"center"}} autoCompleteType="cc-exp-year" placeholder="select a date&time"/>
-      <ListView enableEmptySections={true}
-        dataSource={this.state.dataSource}
-        renderRow={(service) => {
-          return (
-            <View style={styles.box}>
-              <Image style={styles.image} source={require('../../assets/images/Available.png')} />
-              <View style={styles.boxContent}>
-          <Text style={styles.title}>Parkspace#{i++}</Text>
-                <Text style={styles.description}>Click To Reserve</Text>
-                <View style={styles.buttons}>
-                  <TouchableHighlight style={[styles.button, styles.view]}>
-                  <Text style={styles.icon,{alignSelf:'center'}}>Reserve</Text>
-                  </TouchableHighlight>
-                  <TouchableHighlight style={[styles.button, styles.message]}>
-                  <Text style={styles.icon,{alignSelf:'center'}}>Availabe</Text>
-                  </TouchableHighlight>
-                </View>
-              </View>
+            <TouchableOpacity onPress={()=>{showTimepicker(); console.log(show)}} style={{alignSelf:"center",alignContent:"center",margin:20,backgroundColor:'#fff'}}><Text>Select date and Time</Text></TouchableOpacity>
+            <View>
+              
+            {show && (
+        <DateTimePicker
+          testID="dateTimePicker"
+          value={date}
+          mode={mode}
+          is24Hour={false}
+          display="default"
+          onChange={onChange}
+        />
+      )}
             </View>
-          )
-        }}/>
         <View style={styles.box}>
               <Image style={styles.image} source={require('../../assets/images/notavailable.png')} />
               <View style={styles.boxContent}>
@@ -73,9 +71,8 @@ export default class Parkinglot extends Component {
         </View>
         </ScrollView>
     );
-  }
-}
-
+ }
+export default Parkinglot;
 const styles = StyleSheet.create({
     header:{
         backgroundColor: "#00BFFF",
