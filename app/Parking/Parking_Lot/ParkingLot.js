@@ -17,6 +17,12 @@ import ListView from 'deprecated-react-native-listview';
 import { ScrollView } from 'react-native-gesture-handler';
 const Parkinglot=(props)=>  {
   const data=props.route.params.data;
+  const tommorrow=()=>{
+    const today = new Date()
+const tomorrow = new Date(today)
+tomorrow.setDate(tomorrow.getDate() + 1)
+return tommorrow;
+  }
   const [date, setDate] = useState(new Date(1598051730000));
   const [mode, setMode] = useState('date');
   const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
@@ -24,6 +30,7 @@ const Parkinglot=(props)=>  {
   const [date_selected,setDateSelected]=useState({value:false,loading:false})
   const handleConfirm = (date) => {
     console.warn("A date has been picked: ", date);
+    setDateSelected({value:true})
     hideDatePicker();
   };
   const showDatePicker = () => {
@@ -45,10 +52,14 @@ const Parkinglot=(props)=>  {
     <DateTimePickerModal
 isVisible={isDatePickerVisible}
 mode="datetime"
+is24Hour={false}
 onConfirm={handleConfirm}
+minimumDate={new Date()}
+maximumDate={new Date(new Date().setDate(new Date().getDate()+3))}
 onCancel={hideDatePicker}
 />
     </View>
+    <Divider style={{margin:5,borderColor:'#0000'}} />
     <List.Item
     title="Step-1"
     description="Select a date & and Time to View Reservations"
@@ -65,6 +76,7 @@ onCancel={hideDatePicker}
     title="Step-3"
     description="Add Your Time of arrival and departure"
     left={props => <List.Icon color={Colors.blue500} {...props} style={{width:50,height:50}} icon="help-circle-outline" />}
+
   />
   <Divider style={{margin:5,borderColor:'#0000'}}/>
   <List.Item
