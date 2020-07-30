@@ -73,7 +73,7 @@ class Map extends Component {
        onPress={()=>this.setState}
        >
          <Image source={require('../assets/images/pin_marker.png')} style={{ width: 30, height:30 }} />
-         <Callout style={{width:130}} onPress={()=>this.props.navigation.navigate('Parking_Stack')}>
+         <Callout style={{width:130}} onPress={()=>this.props.navigation.navigate('Parking_Stack',{screen:'Parking',params:{name:parking[0],data:parking[1]}})}>
         <Text>{parking[1].name}</Text>
       <Text style={{color:'black',opacity:0.5}}>{parking[1].Fees}Rs./hour</Text>
         <Text style={{color:'green'}}>{Object.keys(parking[1].slots).length} Spots available</Text>

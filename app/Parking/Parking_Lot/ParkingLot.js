@@ -11,66 +11,79 @@ import {
   Image,
   TouchableOpacity
 } from 'react-native';
-import DateTimePicker from '@react-native-community/datetimepicker';
+import DateTimePickerModal from "react-native-modal-datetime-picker";
 import ListView from 'deprecated-react-native-listview';
 import { ScrollView } from 'react-native-gesture-handler';
-const Parkinglot=(state,setState)=>  {
+const Parkinglot=(props)=>  {
+  console.log(props.route.params);
+  const data=props.route.params.data;
   const [date, setDate] = useState(new Date(1598051730000));
   const [mode, setMode] = useState('date');
-  const [show, setShow] = useState(false);
-  
-  const onChange = (event, selectedDate) => {
-    const currentDate = selectedDate || date;
-    setDate(currentDate);
+  const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
+  const imgs={1:require("../../assets/images/Available.png"),0:require("../../assets/images/notavailable.png")};
+  const [date_selected,setDateSelected]=useState({value:false,date})
+  const handleConfirm = (date) => {
+    console.warn("A date has been picked: ", date);
+    hideDatePicker();
+  };
+  const showDatePicker = () => {
+    setDatePickerVisibility(true);
+    console.log("here");
   };
 
-  const showMode = currentMode => {
-    setShow(true);
-    setMode(currentMode);
+  const hideDatePicker = () => {
+    setDatePickerVisibility(false);
   };
-
-  const showDatepicker = () => {
-    showMode('date');
-  };
-
-  const showTimepicker = () => {
-    showMode('time');
-  };
+  if(!date_selected.value)
+  {
+  return(
+    <View style={styles.container}>
+    <ScrollView>
+    <TouchableOpacity onPress={()=>{showDatePicker();}} style={{alignSelf:"center",alignContent:"center",margin:20,backgroundColor:'#fff'}}><Text>Select date and Time</Text></TouchableOpacity>
+    <View> 
+    <DateTimePickerModal
+isVisible={isDatePickerVisible}
+mode="datetime"
+onConfirm={handleConfirm}
+onCancel={hideDatePicker}
+/>
+    </View>
+    </ScrollView>
+    </View>
+  )
+  }else{
     return (
         <ScrollView>
         <View style={styles.container}>
-            <TouchableOpacity onPress={()=>{showTimepicker(); console.log(show)}} style={{alignSelf:"center",alignContent:"center",margin:20,backgroundColor:'#fff'}}><Text>Select date and Time</Text></TouchableOpacity>
-            <View>
-              
-            {show && (
-        <DateTimePicker
-          testID="dateTimePicker"
-          value={date}
-          mode={mode}
-          is24Hour={false}
-          display="default"
-          onChange={onChange}
-        />
-      )}
-            </View>
-        <View style={styles.box}>
-              <Image style={styles.image} source={require('../../assets/images/notavailable.png')} />
+
+            {
+              Object.entries(data.slots).map((slot,key)=>{
+                console.log(slot);
+                return(
+                        <View style={styles.box} key={key}>
+              <Image style={styles.image} source={imgs[slot[1].status]} />
               <View style={styles.boxContent}>
-          <Text style={styles.title}>Parkspace#5</Text>
-                <Text style={styles.description}>Busy</Text>
+                <Text style={styles.title}>{slot[1].Name}</Text>
+                {slot[1].status==1 &&<Text style={styles.description}>Available</Text> ||
+                slot[1].status==0 && <Text style={styles.description}>Busy</Text>
+                }
                 <View style={styles.buttons}>
-                  <TouchableHighlight style={[styles.buttonbusy, styles.view]}>
+                 {slot[1].status==1&&<TouchableHighlight onPress={()=>{alert('Reserved '+slot[1].id)}} style={[styles.button, styles.view]}>
                   <Text style={styles.icon,{alignSelf:'center'}}>Reserve</Text>
-                  </TouchableHighlight>
-                  <TouchableHighlight style={[styles.button, styles.messages]}>
+                  </TouchableHighlight> ||
+                  slot[1].status==0 &&<TouchableHighlight style={[styles.button, styles.messages]}>
                   <Text style={styles.icon,{alignSelf:'center'}}>Busy</Text>
                   </TouchableHighlight>
+              }
                 </View>
               </View>
             </View>
+              )})}
         </View>
         </ScrollView>
+
     );
+            }
  }
 export default Parkinglot;
 const styles = StyleSheet.create({

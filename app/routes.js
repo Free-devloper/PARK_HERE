@@ -20,7 +20,7 @@ import { color } from 'react-native-reanimated';
 const P_stack=createStackNavigator();
 const Parking_Stack=()=>{
   return( 
-    <P_stack.Navigator initialRouteName='Parking' headerMode='sreen'>
+    <P_stack.Navigator headerMode='sreen'>
     <P_stack.Screen name='Parking' component={Parking}/>
     <P_stack.Screen name='Reservation' component={Reservation}/>
     <P_stack.Screen name='Guide_map' component={GPS_GUIDE}/>
@@ -38,7 +38,7 @@ const Homepage=(navigation)=>{
   )
 }
 const Drawer=createDrawerNavigator();
-const AppStack=({navigation})=>{
+const AppStack=({navigation,route})=>{
   return (
         <Drawer.Navigator drawerType='slide' drawerStyle={{width:'50%'}} drawerContentOptions={{contentContainerStyle:{backgroundColor:'#00BFFF',color:'#fff',height:'100%'},labelStyle:{color:'#fff',fontSize:18,fontWeight:'bold',width:'100%'},activeTintColor:'#000'}}> 
         <Drawer.Screen name='Home' component={Homepage} options={{drawerLabel:'Home',drawerIcon:()=>(<Icon name='md-home' style={{color:'#fff'}} size={30}/>)}}/>
