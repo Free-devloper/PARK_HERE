@@ -5,30 +5,29 @@ import {
   Text,
   View,
   TextInput,
-  Button,
   TouchableHighlight,
   Alert,
   Image,
   TouchableOpacity
 } from 'react-native';
+import {Button,Divider,List,Colors} from 'react-native-paper';
+import moment from 'moment';
 import DateTimePickerModal from "react-native-modal-datetime-picker";
 import ListView from 'deprecated-react-native-listview';
 import { ScrollView } from 'react-native-gesture-handler';
 const Parkinglot=(props)=>  {
-  console.log(props.route.params);
   const data=props.route.params.data;
   const [date, setDate] = useState(new Date(1598051730000));
   const [mode, setMode] = useState('date');
   const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
   const imgs={1:require("../../assets/images/Available.png"),0:require("../../assets/images/notavailable.png")};
-  const [date_selected,setDateSelected]=useState({value:false,date})
+  const [date_selected,setDateSelected]=useState({value:false,loading:false})
   const handleConfirm = (date) => {
     console.warn("A date has been picked: ", date);
     hideDatePicker();
   };
   const showDatePicker = () => {
     setDatePickerVisibility(true);
-    console.log("here");
   };
 
   const hideDatePicker = () => {
@@ -39,7 +38,9 @@ const Parkinglot=(props)=>  {
   return(
     <View style={styles.container}>
     <ScrollView>
-    <TouchableOpacity onPress={()=>{showDatePicker();}} style={{alignSelf:"center",alignContent:"center",margin:20,backgroundColor:'#fff'}}><Text>Select date and Time</Text></TouchableOpacity>
+    <Button compact={true} loading={date_selected.loading} style={{margin:20,padding:10}} icon="calendar" mode="contained" onPress={() =>{showDatePicker();}}>
+    Select Date & Time
+  </Button>
     <View> 
     <DateTimePickerModal
 isVisible={isDatePickerVisible}
@@ -48,6 +49,29 @@ onConfirm={handleConfirm}
 onCancel={hideDatePicker}
 />
     </View>
+    <List.Item
+    title="Step-1"
+    description="Select a date & and Time to View Reservations"
+    left={props => <List.Icon color={Colors.blue500} {...props} style={{width:50,height:50}} icon="help-circle-outline" />}
+  />
+  <Divider style={{margin:5,borderColor:'#0000'}} />
+     <List.Item
+    title="Step-2"
+    description="Select a Slot and Goto Reservation"
+    left={props => <List.Icon color={Colors.blue500} {...props} style={{width:50,height:50}} icon="help-circle-outline" />}
+  />
+  <Divider style={{margin:5,borderColor:'#0000'}} />
+    <List.Item
+    title="Step-3"
+    description="Add Your Time of arrival and departure"
+    left={props => <List.Icon color={Colors.blue500} {...props} style={{width:50,height:50}} icon="help-circle-outline" />}
+  />
+  <Divider style={{margin:5,borderColor:'#0000'}}/>
+  <List.Item
+    title="Step-4"
+    description="Confirm and pay for the Reservation"
+    left={props => <List.Icon color={Colors.blue500} {...props} style={{width:50,height:50}} icon="help-circle-outline" />}
+  />
     </ScrollView>
     </View>
   )
@@ -58,7 +82,6 @@ onCancel={hideDatePicker}
 
             {
               Object.entries(data.slots).map((slot,key)=>{
-                console.log(slot);
                 return(
                         <View style={styles.box} key={key}>
               <Image style={styles.image} source={imgs[slot[1].status]} />
@@ -90,6 +113,9 @@ const styles = StyleSheet.create({
     header:{
         backgroundColor: "#00BFFF",
         height:'7%',
+      },
+      datapikerbutton:{
+        
       },
   image: {
     width: 100,
