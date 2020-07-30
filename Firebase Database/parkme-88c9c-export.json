@@ -1,0 +1,270 @@
+{
+  "Management Guard" : {
+    "aaa" : {
+      "Name" : "Fida",
+      "case solved" : "6",
+      "status" : "Active"
+    },
+    "abc" : {
+      "Name" : "Bilal",
+      "case solved" : 3,
+      "status" : "Not Active"
+    },
+    "xyz" : {
+      "Name" : "jawad",
+      "case solved" : 5,
+      "status" : "Active"
+    }
+  },
+  "Parking fees" : {
+    "-M9VhqO49Vw7PDhGaKX0" : {
+      "fees" : 80,
+      "vehicle no" : "Raw 3231"
+    },
+    "-M9Vhy1FBj6rlrnF_IMX" : {
+      "fees" : 540,
+      "vehicle no" : "LEW 786"
+    },
+    "-M9ViFiznNeR8dmod2Tb" : {
+      "fees" : 80,
+      "vehicle no" : "SGD"
+    },
+    "-M9W_yb2zWOSrTPhB4ip" : {
+      "fees" : 60,
+      "vehicle no" : "SGD 3421"
+    }
+  },
+  "Parkinglots" : {
+    "Parking-lot-1" : {
+      "Fees" : 30,
+      "Location" : {
+        "latitude" : 33.6510582,
+        "longitude" : 73.0791866
+      },
+      "id" : 123456,
+      "name" : "Uiit Parking",
+      "slots" : {
+        "slot-1" : {
+          "Name" : "uiit-slot-1",
+          "id" : 12,
+          "status" : 1
+        },
+        "slot-2" : {
+          "id" : 13,
+          "name" : "uiit-slot-2",
+          "status" : 0
+        }
+      }
+    },
+    "Parking-lot-2" : {
+      "Fees" : 30,
+      "Location" : {
+        "latitude" : 33.6506739,
+        "longitude" : 73.0812358
+      },
+      "id" : 123456,
+      "name" : "Uaar Parking",
+      "slots" : {
+        "slot-1" : {
+          "Name" : "uiit-slot-1",
+          "id" : 12,
+          "status" : "available"
+        },
+        "slot-2" : {
+          "id" : 13,
+          "name" : "uiit-slot-2",
+          "status" : "busy"
+        }
+      }
+    },
+    "Parking-lot-3" : {
+      "Fees" : 50,
+      "Location" : {
+        "latitude" : 29.614147,
+        "longitude" : 73.1347564
+      },
+      "id" : 123456,
+      "name" : "HAROONABAD Parking",
+      "slots" : {
+        "slot-1" : {
+          "Name" : "Hnd-1",
+          "id" : 12,
+          "status" : 1
+        },
+        "slot-2" : {
+          "Name" : "Hnd-2",
+          "id" : 13,
+          "status" : 0
+        }
+      }
+    }
+  },
+  "Users" : {
+    "5j8YPrAcv3RT4IHeMp06WkEEAnX2" : {
+      "Profilepic" : "gs://parkme-88c9c.appspot.com/Users/Profilepic/avatar6.png",
+      "Wallet" : {
+        "Recharge" : 0,
+        "Spent" : 0,
+        "amount" : 30
+      },
+      "email" : "jeref@gmail.com",
+      "expiresIn" : "3600",
+      "idToken" : "eyJhbGciOiJSUzI1NiIsImtpZCI6IjZjZmMyMzViZDYxMGZhY2FlYzVlYjBhZGU5NTg5ZGE5NTI4MmRlY2QiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vcGFya21lLTg4YzljIiwiYXVkIjoicGFya21lLTg4YzljIiwiYXV0aF90aW1lIjoxNTk1ODU0NzU2LCJ1c2VyX2lkIjoiNWo4WVByQWN2M1JUNElIZU1wMDZXa0VFQW5YMiIsInN1YiI6IjVqOFlQckFjdjNSVDRJSGVNcDA2V2tFRUFuWDIiLCJpYXQiOjE1OTU4NTQ3NTYsImV4cCI6MTU5NTg1ODM1NiwiZW1haWwiOiJqZXJlZkBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsiamVyZWZAZ21haWwuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.XdRtGWAXVesJofSdR7PagwpJrgLR5SFUYAN2auo4vRG9U2FoIArzyTj7TqZt06LiNftw3fHMqIXTNYc-XYBBTkt401GDKyWNFQ2mXgnl-vPTtGgmJomDpr-VKv6mvQrZUFk9YV82dtWpmSssx3gW1na1nAPHSzYDwAXLs0bvmEY61nU9ZzOA8tJzOMtYfMMgbPHp_9JVs-8QteO6sueWmVSUWwm1aAqpAxky1A5UjnAabAdr7zdQ-yKeJjLByhhpkS6ikne329Pwq5uKQ-r5cQCCj1JOkwiEABiTbJzkto0BofK02wON72ca4-bPjuJMIzTUnqU92cIQTRtv25AtbQ",
+      "kind" : "identitytoolkit#SignupNewUserResponse",
+      "localId" : "5j8YPrAcv3RT4IHeMp06WkEEAnX2",
+      "name" : "Jeref",
+      "refreshToken" : "AE0u-Nd_O_CrYk-QzI3hc4U7Uf8-O_alquIwkS9nxowLCRX7lvQGfFtNCnXcg7va9v-e3oKWXHoHPudVq9NKhxqjBzjd-H52BsPJnUY0QLH5l_8RmlkMv0IKYIoi3vpq18nXoexkpiBscEwS3O4exZjpeBCF8KXhKx4keeBd3DA0IGNlHmaZIZr3gk-mnj0XHJWHFTv8je8Y",
+      "role" : "user",
+      "status" : {
+        "active" : true
+      }
+    },
+    "5lbWj9sNGSMlqwCw1OBozR1Hgx12" : {
+      "email" : "rehansohail37@gmail.com",
+      "expiresIn" : "3600",
+      "idToken" : "eyJhbGciOiJSUzI1NiIsImtpZCI6IjdkNTU0ZjBjMTJjNjQ3MGZiMTg1MmY3OWRiZjY0ZjhjODQzYmIxZDciLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vcGFya21lLTg4YzljIiwiYXVkIjoicGFya21lLTg4YzljIiwiYXV0aF90aW1lIjoxNTkzNjkyNDIzLCJ1c2VyX2lkIjoiNWxiV2o5c05HU01scXdDdzFPQm96UjFIZ3gxMiIsInN1YiI6IjVsYldqOXNOR1NNbHF3Q3cxT0JvelIxSGd4MTIiLCJpYXQiOjE1OTM2OTI0MjMsImV4cCI6MTU5MzY5NjAyMywiZW1haWwiOiJyZWhhbnNvaGFpbDM3QGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJyZWhhbnNvaGFpbDM3QGdtYWlsLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.NJUYturtjWCXB8zMho-pWKkb7vwludX6vApCN5ufdl-cFU_VU7lSO5FvY8to7jzfRlmgj-i-S4LjkIKm3g8Y8SY1h9KqR5MGLI-LG5jJWL7N9rXMDqbH_Q2aiCpeVJS5Kk2WNL7vK1E-wmhBeSizrNrH8_0ySSngot5yJ17ELVnp3PQHtyqDda7cbE85gZalQVFfVVgbSnqyVYXKfksSIpcPueCKO0R7jMVYa951ykMWDIfrZrPzRy9-PVnZN5fLmUGW9Fsl9kjTmyxxk-QDQjebyoWiOUm6bexAGjljs4DMw3rxXOCfRGf6oV_tEGMmSPjRhMLdV3pu_wxESu9q0g",
+      "kind" : "identitytoolkit#SignupNewUserResponse",
+      "localId" : "5lbWj9sNGSMlqwCw1OBozR1Hgx12",
+      "name" : "RehanGhafoor",
+      "refreshToken" : "AE0u-NcuiNXrv5OOM_XN45PUy9cygyNwvrJ-zZRaSuznZKbw47QGwSg87nkvkBObIX_IZnwbbYAL0SWakEpCicFxSIj1g5Ev5LsPEaXttB_hqj416XmkSFZxcZQxcTAs0i5I_r1vF9X0rGBeKidfZHFyy8X7AC7s47_iuOyp2d7lwYmBOlABaBwF3U3EySzzeOa2iNJPacnpauH1gcW7tzfZ6hH7Gqll-g"
+    },
+    "7zUe42BLTlUeTsxYBy0qDgihNcL2" : {
+      "email" : "jawadishaq@gmail.com",
+      "expiresIn" : "3600",
+      "idToken" : "eyJhbGciOiJSUzI1NiIsImtpZCI6IjdkNTU0ZjBjMTJjNjQ3MGZiMTg1MmY3OWRiZjY0ZjhjODQzYmIxZDciLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vcGFya21lLTg4YzljIiwiYXVkIjoicGFya21lLTg4YzljIiwiYXV0aF90aW1lIjoxNTkzNjkyNDc2LCJ1c2VyX2lkIjoiN3pVZTQyQkxUbFVlVHN4WUJ5MHFEZ2loTmNMMiIsInN1YiI6Ijd6VWU0MkJMVGxVZVRzeFlCeTBxRGdpaE5jTDIiLCJpYXQiOjE1OTM2OTI0NzYsImV4cCI6MTU5MzY5NjA3NiwiZW1haWwiOiJqYXdhZGlzaGFxQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJqYXdhZGlzaGFxQGdtYWlsLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.YMRSbAq_RVcpF-R-U9rjIE8pqt0fGJ05nv2CioStcuCUAAKZeSr0X6uTyvmLFI60SkI50QpV6LlDSkXd2Xe3F0ZzZJZh-G3U2aZxfIoFp5Z2CPC8JHIErTQHs6gy1TfVF7gPLCoN2kU1U6wbmDZFQFMcNZo4Fsc8x_YT0xG1C448l9fj9j_9L_vmmsgkvUmnK2D7Hz48cIUG5Dt0UNny8vhMosPhGtA9LfaibnDbQO6CxPqnBWPRAikbgG_pZBLsACPX8giktO9yBPUUOi-CUH8wX4z9sDqwN3Q3wTngbYPIfnkJ6RkX4-L3_HaCCzuNJ5D-5mHFl65x9KDWqRFSTA",
+      "kind" : "identitytoolkit#SignupNewUserResponse",
+      "localId" : "7zUe42BLTlUeTsxYBy0qDgihNcL2",
+      "name" : "Jawad",
+      "refreshToken" : "AE0u-NetivmyZc8tz_7qR5c69UAf1mJeSVC1sGEKC1r9jPr11ibnhTGt0WRLFdEI-5qFei1McxRxwsEQ2tGmVvs4ZcPV7vmcVJhlLfrSsnXoBx2BZzCkD5rXMpRoaS_quvCmD3XgInok3GL0E3NAaCVBGd-H3C-qqfcAtb5v0Qz4PlhOWoexizz46yE5oGIV4It2Rz8See_XDdcRaMpW9TMLx3zLXlf-SA"
+    },
+    "8oXrEYmFelWwUl4A5uMrx8qq6kV2" : {
+      "Profilepic" : "gs://parkme-88c9c.appspot.com/Users/Profilepic/avatar6.png",
+      "Wallet" : {
+        "Recharge" : 0,
+        "Spent" : 0,
+        "amount" : 30
+      },
+      "email" : "abdullah@gmail.com",
+      "expiresIn" : "3600",
+      "idToken" : "eyJhbGciOiJSUzI1NiIsImtpZCI6Ijc2MjNlMTBhMDQ1MTQwZjFjZmQ0YmUwNDY2Y2Y4MDM1MmI1OWY4MWUiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vcGFya21lLTg4YzljIiwiYXVkIjoicGFya21lLTg4YzljIiwiYXV0aF90aW1lIjoxNTkzNzcxMDg4LCJ1c2VyX2lkIjoiOG9YckVZbUZlbFd3VWw0QTV1TXJ4OHFxNmtWMiIsInN1YiI6IjhvWHJFWW1GZWxXd1VsNEE1dU1yeDhxcTZrVjIiLCJpYXQiOjE1OTM3NzEwODgsImV4cCI6MTU5Mzc3NDY4OCwiZW1haWwiOiJhYmR1bGxhaEBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsiYWJkdWxsYWhAZ21haWwuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.Iz1tIN4hn-oko76FpcyM_IsrVCZZP4DEHAuUgLYehETrOc-abPDg2iXPeFsCJzS8A7ngAWfxYV-ccm6Cq4rIvyGMwEuzDNeALM1DAUwltapjxNzqW631nws67SAwg_Xq9qfhG1-6z68zSq_0rX2znp0EnUtOLbOPc0AEhby1vqLvr28usWX24av6oqjpbcdPBw6jxC7BSkC5J5E4n9dyiRbmaLNJnJk26eCyIoyw0-nWna0-CY1LFnO2dAKaUKUgYuaGBQHA50okKQIPEydABfjpeeO2i1DgYzZBbSPUuXo5GNm6t81DznN6WHSxru3XwWlaZpLzHEfAFLLwPWIZ0g",
+      "kind" : "identitytoolkit#SignupNewUserResponse",
+      "localId" : "8oXrEYmFelWwUl4A5uMrx8qq6kV2",
+      "name" : "Abdullah ",
+      "refreshToken" : "AE0u-NcO20_T3ky7NyAnYrw-TbPVFrJSaVrPw51GQ0PJKlb2nwg4g-O-TY96SAGsSj0pftDSpcCe963HoQG8OzHXICbCdHkBC6tjbqAkmiCVQ_snMkfeJfmwC-OnSeK1M4-pzk75iQescvwZtLriYxqU1qMLsbUTu1EOSt5v6E8tvDbuj5Mkq_LBI-ckKSS-8l4spg1kPm2i",
+      "role" : "user",
+      "status" : {
+        "active" : true
+      }
+    },
+    "D5wIPxgBaJSXI3vrZtI0Gg4WhQR2" : {
+      "email" : "xainkiyani@gmail.com",
+      "expiresIn" : "3600",
+      "idToken" : "eyJhbGciOiJSUzI1NiIsImtpZCI6IjdkNTU0ZjBjMTJjNjQ3MGZiMTg1MmY3OWRiZjY0ZjhjODQzYmIxZDciLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vcGFya21lLTg4YzljIiwiYXVkIjoicGFya21lLTg4YzljIiwiYXV0aF90aW1lIjoxNTkzNjkyNTEzLCJ1c2VyX2lkIjoiRDV3SVB4Z0JhSlNYSTN2clp0STBHZzRXaFFSMiIsInN1YiI6IkQ1d0lQeGdCYUpTWEkzdnJadEkwR2c0V2hRUjIiLCJpYXQiOjE1OTM2OTI1MTMsImV4cCI6MTU5MzY5NjExMywiZW1haWwiOiJ4YWlua2l5YW5pQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJ4YWlua2l5YW5pQGdtYWlsLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.PShQaGtDPqXOirj0_NLFhkPRobkGvBIGIvl418RqrX2jFLFhfHYoG6tb6qqoVvlkVKONPR17ilbuU2eExK3F80MxETY4QeyvUi59n4bWVugj344ssO04jeDGs0c8UcLxar9t-j-n9HiX37m_XVgs843YyigghhCjLZRTyc2Ww6BC8BAnz1-VhVSK5lGyQNJ6S3JJ0lwY4PaQEL45QMZJ4DrItFhW5gINweTpUb2Tu3dYK3xZHK6IsFsf3J-_MQjD-Zrb52I7Fby1K6zKDEYEJ3eLZ2i0i23jVI_SmPOTpHBeB-KgHB5pHMeoL8gS9cLTju5faZi8ngKQC6R7dYyN5Q",
+      "kind" : "identitytoolkit#SignupNewUserResponse",
+      "localId" : "D5wIPxgBaJSXI3vrZtI0Gg4WhQR2",
+      "name" : "Zain-ul-Abedeen",
+      "refreshToken" : "AE0u-NcPztp4YL5_wzt5NzkTHODJYVGw--w4bCOJfcgX1cOUTRfLCpbGYAeO9HrcPv9gkLIWOxiiVMEq7wwaONCBLNCMJRyf_mMbcmfGsLImtwJgcmAmKWw5FxObWCfBjj0Y1TLotNTM-I7ZjK3lAeTL_shr2O5EJkKQveSR3tTUl-PE9BIkQTfh1RG5HrirmhBJgnQByvviY365WsuX1fCotBPPk1rEDg"
+    },
+    "DBkPHf9EhuMRsWXeTP93AK6nMgj1" : {
+      "Wallet" : {
+        "Recharge" : 0,
+        "Spent" : 0,
+        "amount" : 30
+      },
+      "email" : "reo@gmail.com",
+      "expiresIn" : "3600",
+      "idToken" : "eyJhbGciOiJSUzI1NiIsImtpZCI6Ijc2MjNlMTBhMDQ1MTQwZjFjZmQ0YmUwNDY2Y2Y4MDM1MmI1OWY4MWUiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vcGFya21lLTg4YzljIiwiYXVkIjoicGFya21lLTg4YzljIiwiYXV0aF90aW1lIjoxNTkzNzY4ODIwLCJ1c2VyX2lkIjoiREJrUEhmOUVodU1Sc1dYZVRQOTNBSzZuTWdqMSIsInN1YiI6IkRCa1BIZjlFaHVNUnNXWGVUUDkzQUs2bk1najEiLCJpYXQiOjE1OTM3Njg4MjAsImV4cCI6MTU5Mzc3MjQyMCwiZW1haWwiOiJyZW9AZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbInJlb0BnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.cC689boXJ37w6CHs2UY7Wvdvb-IoRAgrHpwFkPj-R-1jYQEEZ7RXKSo6udZsB8h_xz9EfcMcTYzUTuN8gk1JXWH6lhSQbwViapaUshdzY2kNbc-tWbpWdP2DaCj6fogZW6ED57BSBXhg3cTa3NjwskBkhjzCDmhlPqJhRCcI4F1WKD5ZEmhsrzDjzizUctGxzd0WdloLBrXUZZvLu0M4l0DMregyHpGX5Gg8sMrUugUlAkmPUyABdecXKH-l_2-9vmRNlIh_Y0pRH3mJ5AA6er-VHsO00CXjGjPnEQpNxiZqDiGPrguGoOOByCwg5EHiHGUWsDNhis3ZPCuOfhQZ-A",
+      "kind" : "identitytoolkit#SignupNewUserResponse",
+      "localId" : "DBkPHf9EhuMRsWXeTP93AK6nMgj1",
+      "name" : "Reo",
+      "refreshToken" : "AE0u-Ndyo8vARKZfXzwBUoAdHH6ksfo8bY9ZuUGhCMuA9SNo3NhZKIPllKXqqQDMdNk_GlIFIvNYLL3xmiZuPhkgaBNy1KMJh9nPsjPRyIqrRppMZRo52qLKSAc7pXzSrbmr7qHG7xcXBA_SyIBgy053mRwRpS3N7xjNxLzEw2k_qj3soPNMn5eYCWjTzEqqXtPld1d00EgT",
+      "role" : "user",
+      "status" : {
+        "active" : true
+      }
+    },
+    "Dw9eLaEFBraaPv4eb0zhY6xfCNP2" : {
+      "Profilepic" : "gs://parkme-88c9c.appspot.com/Users/Profilepic/avatar6.png",
+      "Wallet" : {
+        "Recharge" : 0,
+        "Spent" : 0,
+        "amount" : 30
+      },
+      "email" : "arid@gmail.com",
+      "expiresIn" : "3600",
+      "idToken" : "eyJhbGciOiJSUzI1NiIsImtpZCI6Ijc2MjNlMTBhMDQ1MTQwZjFjZmQ0YmUwNDY2Y2Y4MDM1MmI1OWY4MWUiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vcGFya21lLTg4YzljIiwiYXVkIjoicGFya21lLTg4YzljIiwiYXV0aF90aW1lIjoxNTkzOTUxMzIzLCJ1c2VyX2lkIjoiRHc5ZUxhRUZCcmFhUHY0ZWIwemhZNnhmQ05QMiIsInN1YiI6IkR3OWVMYUVGQnJhYVB2NGViMHpoWTZ4ZkNOUDIiLCJpYXQiOjE1OTM5NTEzMjMsImV4cCI6MTU5Mzk1NDkyMywiZW1haWwiOiJhcmlkQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJhcmlkQGdtYWlsLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.f9RJRF4E885O8tEY75bjjYwmASJfISJK9P26SiGfJwEDA-OIkw6AY_3h-oizJ8qZmKT1i8lDGwTX9TPHTHFO_pyAaFD4EGc_-j4Q3ZM4vRxkgHA-sHIvBDbO1bA5K-JNZAtxPD2P1VqSB4hbEAxKUl7C6nz2PcQ6RQ0yHEhRWWQpQhNgkw63x5V_Wakdatfg81nJomTk3EpJ2F3MWJBT8RT1AWQzej8r0rvZa8x3VFTZ0YQTDYakd_wJ3e1gZ2a73hSzYi2-6HYBGdwE-IkZHYTPwPLSNhcAeM6unmgsApPxGqhblT-XvWq4Hl8uRk6uxwfz8fOEhdQ-ogvnaSDRaA",
+      "kind" : "identitytoolkit#SignupNewUserResponse",
+      "localId" : "Dw9eLaEFBraaPv4eb0zhY6xfCNP2",
+      "name" : "Rehan Ghafoor",
+      "refreshToken" : "AE0u-NcNWPZ2KAbBkJMPurAhxBKOexNO0IxclzNGSAjeaVMPQKssRJajlLyf_AmMfZP5Z64xSP4nqhhjLvyY7TVGltb-H_uoil7RpCLx7RanW5cBAf4VpyJdrHEkRXhTgArXd7KVEklc2sYEkME73pVZ2g_5Ws9KRhkZL_TPmurMeu4kmpPb8kXZp9BhR675OEQahs2ZfFRp",
+      "role" : "user",
+      "status" : {
+        "active" : true
+      }
+    },
+    "f06zqLKryuUd8KYUVL4CuLQIoMK2" : {
+      "Profilepic" : "gs://parkme-88c9c.appspot.com/Users/Profilepic/avatar6.png",
+      "Wallet" : {
+        "Recharge" : 0,
+        "Spent" : 0,
+        "amount" : 30
+      },
+      "email" : "naima@gmail.com",
+      "expiresIn" : "3600",
+      "idToken" : "eyJhbGciOiJSUzI1NiIsImtpZCI6IjIxODQ1OWJiYTE2NGJiN2I5MWMzMjhmODkxZjBiNTY1M2UzYjM4YmYiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vcGFya21lLTg4YzljIiwiYXVkIjoicGFya21lLTg4YzljIiwiYXV0aF90aW1lIjoxNTk0ODk2NDkwLCJ1c2VyX2lkIjoiZjA2enFMS3J5dVVkOEtZVVZMNEN1TFFJb01LMiIsInN1YiI6ImYwNnpxTEtyeXVVZDhLWVVWTDRDdUxRSW9NSzIiLCJpYXQiOjE1OTQ4OTY0OTAsImV4cCI6MTU5NDkwMDA5MCwiZW1haWwiOiJuYWltYUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsibmFpbWFAZ21haWwuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.XKJk7Km0CA0d9QSIGpDA0XFT4lTfIWOifw0LtqIfDovbRvsbWSz66iZjxWEspeEoJGjldDa-MeFKC5qVto7Xlfz6hha52-vyyPuY_ck-35yidzGtgeHsuo6DjZkyXCobNEKgWjBJsaP05Lv7PR-u_FG2hP33zKUllhfZX1xbTJsifXQTarKjrLnC9Z_1V89G31ehNn-K0uadAKxQWR1J-Hfon0rm8CTlrM9LNsWl0d2oN6wyUy-rx_4xaOIbiHXZ8_TUFjbWjZg9cZIX8hqM2_w-BZ834zctD50bAVfVRbizN0MeSHqF2WHImSjnp6hkO0Y2N4KVsxRRkPx3XhjNog",
+      "kind" : "identitytoolkit#SignupNewUserResponse",
+      "localId" : "f06zqLKryuUd8KYUVL4CuLQIoMK2",
+      "name" : "Naima",
+      "refreshToken" : "AE0u-NemVHVZ2k-K2MeyeH3FgLwOUEjhwTFMGmfCJVzbbMbLZUztfVBU4rXmouHxRSuHg7MOt_WBDIWQV6TmZtQbmJiBvLRIgz20oKZ4krqLzj7ZLag8Z6bgodm4nVIeezKHVTmH8ELLwaw8oDUkDvM8mEuwJ7O-AhnVdjxYJi1vqrahlO6aNSioush0vbhBwJaImmT6CB_k",
+      "role" : "user",
+      "status" : {
+        "active" : true
+      }
+    },
+    "gho3OEd4zdUKa3AUKEb09Y0CMoE3" : {
+      "Profilepic" : "gs://parkme-88c9c.appspot.com/Users/Profilepic/avatar6.png",
+      "Wallet" : {
+        "Recharge" : 0,
+        "Spent" : 0,
+        "amount" : 30
+      },
+      "email" : "parkmeatspot@gmail.com",
+      "expiresIn" : "3600",
+      "idToken" : "eyJhbGciOiJSUzI1NiIsImtpZCI6Ijc2MjNlMTBhMDQ1MTQwZjFjZmQ0YmUwNDY2Y2Y4MDM1MmI1OWY4MWUiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vcGFya21lLTg4YzljIiwiYXVkIjoicGFya21lLTg4YzljIiwiYXV0aF90aW1lIjoxNTk0MDA1ODgxLCJ1c2VyX2lkIjoiZ2hvM09FZDR6ZFVLYTNBVUtFYjA5WTBDTW9FMyIsInN1YiI6ImdobzNPRWQ0emRVS2EzQVVLRWIwOVkwQ01vRTMiLCJpYXQiOjE1OTQwMDU4ODEsImV4cCI6MTU5NDAwOTQ4MSwiZW1haWwiOiJwYXJrbWVhdHNwb3RAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbInBhcmttZWF0c3BvdEBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.EwDZ91U8g_3qrISTergFRGiH2ee1_pECCD9bME3kIg_XHqJxmTY3ovyo6dfdaHeiprVqr3VWKRrqoPgp8Mt91UqyF8oNEbnUP3s_OEfE1plLvHU3zJP4-596TobOGwxo4pYuyc36tJAF9vjKq_ymZ5C913ixU74JrGGLTeMYGtCfnK00gUwNaK7itx2LGCjK8TyK2cvzjxQGjA9OTrwJjjEkB7TCkuA_9s3QZY6EWCVdchWZ_JmqUXD1wN9ZGYA-texi3fEbprmZ6Y3emzX2oee75qJOj_G8S7_YLkAFqLlBI0Eig2duqFL6CU1tpltlvq5DM2F3aRaYRK3peHxNqg",
+      "kind" : "identitytoolkit#SignupNewUserResponse",
+      "localId" : "gho3OEd4zdUKa3AUKEb09Y0CMoE3",
+      "name" : "ParkingUser",
+      "refreshToken" : "AE0u-NevNGX921Nli96NT6MhJqa8qZKjkFkcDaYpkkoDV4JOIKYfxmmAdw3RBb1Lbu08gdAWYQNut3ykVX1OLT8-QERYteK5-GMYPwASFQnO42yARklRMTzb1Po7uSFeA1mK-nZ-HxisOWj2pkHt4_EGAbys3og2ZVLRyGPbx4whfA05xAVLkJbeVo1Zrf0qBWjfFPqSY5At7Qvpt_ouJREsGaowFhbmpA",
+      "role" : "user",
+      "status" : {
+        "active" : true
+      }
+    },
+    "oHQWI3eZYLT6h44Nq9kfXzmvvJE2" : {
+      "Wallet" : {
+        "Recharge" : 0,
+        "Spent" : 0,
+        "amount" : 30
+      },
+      "email" : "arslan@gmail.com",
+      "expiresIn" : "3600",
+      "idToken" : "eyJhbGciOiJSUzI1NiIsImtpZCI6Ijc2MjNlMTBhMDQ1MTQwZjFjZmQ0YmUwNDY2Y2Y4MDM1MmI1OWY4MWUiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vcGFya21lLTg4YzljIiwiYXVkIjoicGFya21lLTg4YzljIiwiYXV0aF90aW1lIjoxNTkzNzY5MTczLCJ1c2VyX2lkIjoib0hRV0kzZVpZTFQ2aDQ0TnE5a2ZYem12dkpFMiIsInN1YiI6Im9IUVdJM2VaWUxUNmg0NE5xOWtmWHptdnZKRTIiLCJpYXQiOjE1OTM3NjkxNzMsImV4cCI6MTU5Mzc3Mjc3MywiZW1haWwiOiJhcnNsYW5AZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbImFyc2xhbkBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.U8GTmmyhhdVu70_e_sw_Z6Nbam41D0Klw8-9SGbYC2VEcJzoYIfZZo1LaxGZmBSLOyJQba4667ZQsy7i-bxh_q_Moi0MpHS-i5Ucy41n9V3o_hPBPMtyu3xbS3t7bwxZ0hJCmJUpEgRpwJ47_Y9VtGWzWBMilA7rmjvgq6krOoVj20LxLG5W83Nr2ioTq6ppNfm4HKKWI7peBBI-52IBBc9iqaPIESSk3szjOIPdZnJGIwjQ9sQM1W8T5uHfs0DWcvAr4Lehy1uFJNWSzz08RyK1J6dZsE5qkJY3Z5ZVVV96y8959gYr-XclaK8Wvxi3dqFDyyi_lIuvwDH4cwMI4A",
+      "kind" : "identitytoolkit#SignupNewUserResponse",
+      "localId" : "oHQWI3eZYLT6h44Nq9kfXzmvvJE2",
+      "name" : "Arslan",
+      "refreshToken" : "AE0u-NfTeZkZGg6i8B-PMMpmUmWH3lmTwtSETACGEkziWDJUgOO03kXp-TvbT7juMNxQoXO7ZT2JpTW6-W9AnPHf3jeIawXyEppBdmqfilFfcqheW4lzUcz-IWZbPSryKYce38gRYKIG5DbUS2PWoRxwRU134saNTwHn8t8ri6T3YovvklvEoxJdpYMWYjD-JyFZmq6u-EuE",
+      "role" : "user",
+      "status" : {
+        "active" : true
+      }
+    }
+  },
+  "Variable IR sensor" : {
+    "Sensor1" : {
+      "Value" : "IR#000"
+    },
+    "Sensor2" : {
+      "Value" : "IR#110"
+    }
+  }
+}
