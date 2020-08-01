@@ -7,6 +7,7 @@ import { View,Text, Button,StyleSheet,BackHandler,DeviceEventEmitter, Alert } fr
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { ActivityIndicator } from 'react-native-paper';
 import { connect } from 'react-redux';
+import Loading from '../Loading';
 import {getmarkers} from '../store/actions/Homeactions';
 import { bindActionCreators } from 'redux';
   class Home extends Component{
@@ -29,10 +30,8 @@ import { bindActionCreators } from 'redux';
       if(this.state.loading)
       {
         return(
-          <View style={styles.loading} >
-            <ActivityIndicator color="#0000ff"/>
-            </View>
-        )
+          <Loading />
+        ) 
       }else if(!this.state.connection){
         return(
         <View>

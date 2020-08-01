@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "30765273727",
+    "firebase_url": "https://parkme-88c9c.firebaseio.com",
+    "project_id": "parkme-88c9c",
+    "storage_bucket": "parkme-88c9c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:30765273727:android:df7ba3dabd4d0a386e654a",
+        "android_client_info": {
+          "package_name": "com.park_here"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "30765273727-6p5kcoliefbimged2efqik28uj8lscjn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKjR9BSxaiGR55pK6z7AMWYFdzHrpzQhs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "30765273727-6p5kcoliefbimged2efqik28uj8lscjn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

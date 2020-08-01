@@ -3,6 +3,7 @@ import { Text,Image,View,StyleSheet,ActivityIndicator, PermissionsAndroid } from
 import MapView, { PROVIDER_GOOGLE, Marker, Callout } from 'react-native-maps';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { connect } from 'react-redux';
+import Loading from '../Loading';
 import { bindActionCreators } from 'redux';
 import Geolocation from '@react-native-community/geolocation';
 class Map extends Component {
@@ -43,9 +44,7 @@ class Map extends Component {
       if(this.state.userlongitude==null)
       {
         return(
-          <View style={styles.loading} >
-            <ActivityIndicator color="#0000ff"/>
-            </View>
+            <Loading />
         )
       }else{
         return (
@@ -53,7 +52,7 @@ class Map extends Component {
      <MapView
        style={StyleSheet.absoluteFillObject}
        showsUserLocation={true}
-       followsUserLocation={false}
+       followsUserLocation={true}
        provider={PROVIDER_GOOGLE} // remove if not using Google Maps
        style={styles.map}
        region={{

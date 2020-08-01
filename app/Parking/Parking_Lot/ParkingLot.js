@@ -1,5 +1,6 @@
 import image from '../../assets/Parkingslot.png'
 import React, { Component, useState } from 'react';
+import LottieView from 'lottie-react-native';
 import {
   StyleSheet,
   Text,
@@ -12,11 +13,13 @@ import {
 } from 'react-native';
 import {Button,Divider,List,Colors} from 'react-native-paper';
 import moment from 'moment';
+import Loading from '../../Loading';
 import DateTimePickerModal from "react-native-modal-datetime-picker";
-import ListView from 'deprecated-react-native-listview';
+import database from '../../Firebase'
 import { ScrollView } from 'react-native-gesture-handler';
 const Parkinglot=(props)=>  {
-  const data=props.route.params.data;
+const [data,setData]=useState(props.route.params.data);
+  const Parkinglot_id=props.route.params.name;
   const tommorrow=()=>{
     const today = new Date()
 const tomorrow = new Date(today)
@@ -30,24 +33,27 @@ return tommorrow;
   const [date_selected,setDateSelected]=useState({value:false,loading:false})
   const handleConfirm = (date) => {
     console.warn("A date has been picked: ", date);
-    setDateSelected({value:true})
-    hideDatePicker();
+    setDateSelected({value:true});
   };
   const showDatePicker = () => {
+    setDateSelected({loading:true});
     setDatePickerVisibility(true);
   };
 
   const hideDatePicker = () => {
     setDatePickerVisibility(false);
+    setDateSelected({loading:false});
   };
+  const getdata_event=()=>{
+    database().ref('/Parkinglots/'+Parkinglot_id).on('value', snapshot => {
+      setData(snapshot.val());
+    });
+  }
   if(!date_selected.value)
   {
   return(
     <View style={styles.container}>
     <ScrollView>
-    <Button compact={true} loading={date_selected.loading} style={{margin:20,padding:10}} icon="calendar" mode="contained" onPress={() =>{showDatePicker();}}>
-    Select Date & Time
-  </Button>
     <View> 
     <DateTimePickerModal
 isVisible={isDatePickerVisible}
@@ -59,12 +65,17 @@ maximumDate={new Date(new Date().setDate(new Date().getDate()+3))}
 onCancel={hideDatePicker}
 />
     </View>
+      <LottieView style={{width:'100%',margin:0,alignSelf:'center',justifyContent:'center'}} source={require('../../../android/app/src/main/assets/13456-empty-slot-start-animation.json')} autoPlay loop/>
+      <Button compact={true} loading={date_selected.loading} style={{margin:20,padding:10}} icon="calendar" mode="contained" onPress={() =>{showDatePicker();}}>
+    Select Date & Time
+  </Button>
     <Divider style={{margin:5,borderColor:'#0000'}} />
     <List.Item
     title="Step-1"
     description="Select a date & and Time to View Reservations"
     left={props => <List.Icon color={Colors.blue500} {...props} style={{width:50,height:50}} icon="help-circle-outline" />}
   />
+  
   <Divider style={{margin:5,borderColor:'#0000'}} />
      <List.Item
     title="Step-2"
