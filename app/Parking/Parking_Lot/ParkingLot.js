@@ -1,5 +1,5 @@
 import image from '../../assets/Parkingslot.png'
-import React, { Component, useState } from 'react';
+import React, { Component, useState, useEffect,useMemo } from 'react';
 import LottieView from 'lottie-react-native';
 import {
   StyleSheet,
@@ -20,52 +20,44 @@ import { ScrollView } from 'react-native-gesture-handler';
 const Parkinglot=(props)=>  {
 const [data,setData]=useState(props.route.params.data);
   const Parkinglot_id=props.route.params.name;
-  const tommorrow=()=>{
-    const today = new Date()
-const tomorrow = new Date(today)
-tomorrow.setDate(tomorrow.getDate() + 1)
-return tommorrow;
-  }
-  const [date, setDate] = useState(new Date(1598051730000));
-  const [mode, setMode] = useState('date');
   const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
   const imgs={1:require("../../assets/images/Available.png"),0:require("../../assets/images/notavailable.png")};
   const [date_selected,setDateSelected]=useState({value:false,loading:false})
   const handleConfirm = (date) => {
-    console.warn("A date has been picked: ", date);
+    getdata_event();
+    props.setDate(date);
     setDateSelected({value:true});
   };
   const showDatePicker = () => {
     setDateSelected({loading:true});
     setDatePickerVisibility(true);
   };
-
+const getdata_event=()=>{
+  database().ref('/Parkinglots/'+Parkinglot_id).on('value', snapshot => {
+    setData(snapshot.val());
+  });
+}
   const hideDatePicker = () => {
     setDatePickerVisibility(false);
     setDateSelected({loading:false});
   };
-  const getdata_event=()=>{
-    database().ref('/Parkinglots/'+Parkinglot_id).on('value', snapshot => {
-      setData(snapshot.val());
-    });
-  }
   if(!date_selected.value)
   {
   return(
     <View style={styles.container}>
     <ScrollView>
     <View> 
-    <DateTimePickerModal
+<DateTimePickerModal
 isVisible={isDatePickerVisible}
 mode="datetime"
 is24Hour={false}
 onConfirm={handleConfirm}
 minimumDate={new Date()}
+onDateChange={(value)=>{return value=value;}}
 maximumDate={new Date(new Date().setDate(new Date().getDate()+3))}
 onCancel={hideDatePicker}
 />
     </View>
-      <LottieView style={{width:'100%',margin:0,alignSelf:'center',justifyContent:'center'}} source={require('../../../android/app/src/main/assets/13456-empty-slot-start-animation.json')} autoPlay loop/>
       <Button compact={true} loading={date_selected.loading} style={{margin:20,padding:10}} icon="calendar" mode="contained" onPress={() =>{showDatePicker();}}>
     Select Date & Time
   </Button>
@@ -114,7 +106,7 @@ onCancel={hideDatePicker}
                 slot[1].status==0 && <Text style={styles.description}>Busy</Text>
                 }
                 <View style={styles.buttons}>
-                 {slot[1].status==1&&<TouchableHighlight onPress={()=>{alert('Reserved '+slot[1].id)}} style={[styles.button, styles.view]}>
+                 {slot[1].status==1&&<TouchableHighlight onPress={()=>{alert('Reserved '+slot[1].id);}} style={[styles.button, styles.view]}>
                   <Text style={styles.icon,{alignSelf:'center'}}>Reserve</Text>
                   </TouchableHighlight> ||
                   slot[1].status==0 &&<TouchableHighlight style={[styles.button, styles.messages]}>
