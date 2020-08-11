@@ -9,7 +9,10 @@ class Logout extends Component {
         if(this.state.Logout)
         {
         AsyncStorage.clear();
-        this.props.navigation.replace('Login');
+        this.props.navigation.reset({
+            index: 0,
+            routes: [{ name: 'Reservation' }],
+          });
         }
     }
     render(){

@@ -123,14 +123,8 @@ const getdata_event=()=>{
       start_time:starttime.value,
       end_time:endtime.value
     }
-    const refr=database().ref('/Slots_reservations/'+slot_id+'/'+data.date+'/'+props.User.auth.uid).set({
-      start_time:data.start_time,
-      end_time:data.end_time,
-      slot_id:slot_id
-    }).then((resp)=>{
     props.SaveReservationdata(data);
-    props.navigation.navigate('Reservation');
-    }).catch(err=>{console.log(err)})
+    props.navigation.replace('Reservation');
   }
   const check_existing_Reservations=async(date_strt,time_strt,time_end)=>{
     let data_send={
