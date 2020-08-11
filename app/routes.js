@@ -21,7 +21,7 @@ const P_stack=createStackNavigator();
 const Parking_Stack=()=>{
   return( 
     <P_stack.Navigator headerMode='sreen'>
-    <P_stack.Screen name='Parking' component={Parking}/>
+    <P_stack.Screen name='Parking' component={Parking} initialParams={{data:'NAN'}}/>
     <P_stack.Screen name='Reservation' component={Reservation}/>
     <P_stack.Screen name='Guide_map' component={GPS_GUIDE}/>
     </P_stack.Navigator>

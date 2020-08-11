@@ -70,11 +70,13 @@
         "slot-1" : {
           "Name" : "uiit-slot-1",
           "id" : 121,
+          "slot_status" : "active",
           "status" : 0
         },
         "slot-2" : {
           "Name" : "uiit-slot-2",
           "id" : 131,
+          "slot_status" : "active",
           "status" : 1
         }
       }
@@ -91,11 +93,13 @@
         "slot-1" : {
           "Name" : "uiit-slot-1",
           "id" : 12,
+          "slot_status" : "active",
           "status" : 0
         },
         "slot-2" : {
           "Name" : "uiit-slot-2",
           "id" : 13,
+          "slot_status" : "active",
           "status" : 1
         }
       }
@@ -112,11 +116,13 @@
         "slot-1" : {
           "Name" : "Hnd-1",
           "id" : 12,
+          "slot_status" : "active",
           "status" : 1
         },
         "slot-2" : {
           "Name" : "Hnd-2",
           "id" : 13,
+          "slot_status" : "active",
           "status" : 1
         }
       }

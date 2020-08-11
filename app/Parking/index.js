@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import {setDate} from '../store/actions/Date_actions'
 import PakingLot from './Parking_Lot/ParkingLot'
+import {SaveReservationdata} from '../store/actions/Reservation_actions';
 class Parking extends Component {
   state={
     isVisible:false,
@@ -27,10 +28,11 @@ class Parking extends Component {
 function mapStateToProps(state){
   return{
     User:state.User,
-    Date_check:state.Date_check
+    Date_check:state.Date_check,
+    Reservation_data:state.Reservation_data
   }
 }
 function mapDispatchToProps(dispatch){
-  return bindActionCreators({setDate},dispatch);
+  return bindActionCreators({setDate,SaveReservationdata},dispatch);
 }
 export default connect(mapStateToProps,mapDispatchToProps) (Parking);

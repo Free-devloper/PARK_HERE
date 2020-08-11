@@ -32,6 +32,7 @@ export function getmarkers()
             error:true
         }
         dispatch(success(GET_MARKERS,data))
+        console.log(data);
         resolve(data);
     })
 })
