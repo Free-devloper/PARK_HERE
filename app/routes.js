@@ -15,6 +15,7 @@ import Parking from './Parking'
 import GPS_GUIDE from './Parking/GPS_GUIDE'
 import Logout from './Login/Logout';
 import Reservation from './Parking/Reservation';
+import Parking_sens from './Parking/Reservation/Parking_sens';
 import {Button,StyleSheet,TouchableOpacity, Text, Alert} from 'react-native'
 import { color } from 'react-native-reanimated';
 const P_stack=createStackNavigator();
@@ -23,6 +24,7 @@ const Parking_Stack=()=>{
     <P_stack.Navigator headerMode='sreen'>
     <P_stack.Screen name='Parking' component={Parking} initialParams={{data:'NAN'}}/>
     <P_stack.Screen name='Reservation' component={Reservation}/>
+    <P_stack.Screen name='Parking_sensor' component={Parking_sens}/>
     <P_stack.Screen name='Guide_map' component={GPS_GUIDE}/>
     </P_stack.Navigator>
 

@@ -11,7 +11,7 @@ class Logout extends Component {
         AsyncStorage.clear();
         this.props.navigation.reset({
             index: 0,
-            routes: [{ name: 'Reservation' }],
+            routes: [{ name: 'Login' }],
           });
         }
     }

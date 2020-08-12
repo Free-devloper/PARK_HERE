@@ -30,6 +30,7 @@ const Parkinglot=(props)=>  {
   const [loading_data,setLoadingData]=useState(false);
 const [data,setData]=useState(props.route.params.data);
   const Parkinglot_id=props.route.params.name;
+  const Parkinglot_name=props.route.params.data.name;
   var slots_counter=0;
   const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
   const imgs={1:require("../../assets/images/Available.png"),0:require("../../assets/images/notavailable.png")};
@@ -38,26 +39,30 @@ const [data,setData]=useState(props.route.params.data);
     await props.setDate(start_date);
   }
   const create_date=(date)=>{
-    let dat=new Date(date);
-    let fdate=dat.toDateString();
+    let fdate=date.toDateString();
     return fdate;
   }
   const create_time=(date)=>{
-    let dat=new Date(date);
-    let ftime=dat.toTimeString();
+    let ftime=date.toTimeString();
     return ftime;
   }
   const checkdates=(strt_date,end_date)=>{
     return new Promise(resolve=>{
     console.log(start_date.value);
+
     let start_time=new Date(start_date.value+' '+strt_date).getTime();
     let end_time=new Date(start_date.value+' '+end_date).getTime();
-    if(end_time<start_time)
+    if(end_time<=start_time)
     {
       sethasErrors({status:true,message:'End Time Must be greater than the Start Time'});
       setLoadingData(false);
       resolve(false);
-    }else{
+    }else if(start_time<=new Date().getTime()){
+      sethasErrors({status:true,message:'Start Time must be in Future'});
+      setLoadingData(false);
+      resolve(false);
+    }else 
+    {
       sethasErrors({status:false,message:''});
       resolve(true);
     }
@@ -118,10 +123,13 @@ const getdata_event=()=>{
   const handleReservation=(slot_id)=>{
     let data={Userid:props.User.auth.uid,
       ParkingLotid:Parkinglot_id,
+      Parking_lot_name:Parkinglot_name,
       sLot_id:slot_id,
+      Parking_Fees:props.route.params.data.Fees,
       date:start_date.value,
       start_time:starttime.value,
-      end_time:endtime.value
+      end_time:endtime.value,
+      confirm_pay:false
     }
     props.SaveReservationdata(data);
     props.navigation.replace('Reservation');
@@ -192,6 +200,7 @@ const getdata_event=()=>{
       <Icon style={styles_.inputIcon} name="md-time" size={30 }/>
       <TextInput style={styles_.inputs}
           label="Start time"
+          error={hasErrors.status}
           value={starttime.value || ''}
           mode="flat"
           onTouchStart={()=>{setPickermode('time');setPicker_val('strt_time');showDatePicker()}}
@@ -217,7 +226,7 @@ const getdata_event=()=>{
 <DateTimePickerModal
 isVisible={isDatePickerVisible}
 mode={picker_mode}
-minuteInterval={15}
+minuteInterval={30}
 locale="es-ES"
 is24Hour={false}
 onConfirm={(date)=>{handleConfirm(date)}}

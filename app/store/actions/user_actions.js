@@ -131,7 +131,7 @@ const saveuser= async(dataname,res)=>{
     }
     console.log(res);
     try{
-    const response = await axios.put(FIREBASEURL+`Users/${res.localId}.json?auth=${res.idToken}`,data);
+    const response = await axios.put(FIREBASEURL+`Users/${res.localId}.json`,data);
     return response;
     }catch(error)
     {

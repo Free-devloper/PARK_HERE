@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import {
   StyleSheet,
   Text,
@@ -6,9 +6,19 @@ import {
   Image,
   TouchableOpacity
 } from 'react-native';
+import database from '../Firebase';
 import { Button } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/Ionicons';
 export default Walletcomp=({props})=>{
+  const[walletamount,setwalletamount]=useState(0);
+  const Getwallet=()=>{
+    database().ref('/Users/'+props.User.auth.uid+'/Wallet').once('value',snappshot=>{
+      setwalletamount(snappshot.val());
+    })
+  }
+  useEffect(()=>{
+    Getwallet();
+  })
   const Go_back=()=>{
     return(
       <TouchableOpacity
@@ -27,7 +37,7 @@ export default Walletcomp=({props})=>{
           <Image style={styles.avatar} source={require('../assets/iconwallet.png')}/>
           <View style={styles.body}>
             <View style={styles.bodyContent}>
-              <Text style={styles.name}>500 Pkr</Text>
+              <Text style={styles.name}>{walletamount.amount} Pkr</Text>
               <Text style={styles.info}>Regular User</Text>
               <Text style={styles.description}></Text>
               
