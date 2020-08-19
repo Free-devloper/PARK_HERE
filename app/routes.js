@@ -14,6 +14,7 @@ import Recharge from './Wallet/Recharge';
 import Parking from './Parking'
 import GPS_GUIDE from './Parking/GPS_GUIDE'
 import Logout from './Login/Logout';
+import CardFormScreen from './stripe/scenes/CardFormScreen';
 import Reservation from './Parking/Reservation';
 import Parking_sens from './Parking/Reservation/Parking_sens';
 import {Button,StyleSheet,TouchableOpacity, Text, Alert} from 'react-native'
@@ -35,6 +36,7 @@ const Homepage=(navigation)=>{
   return(
   <Homestack.Navigator initialRouteName='Home' headerMode='screen'>
   <Homestack.Screen name='Home' component={Home} options={{headerTitle:'Find Parking',headerTitleStyle:[styles.headerTitle],headerTitleAlign:'center',headerStyle:{backgroundColor:'#00BFFF',height:48},headerLeft:(navigation)=>(<DrawerButton navigation={navigation}/> ),headerRight:()=>(<Icon name='md-help-circle' size={36} style={{color:'#fff',fontWeight:'bold',margin:8}} />) }}/>
+  <Homestack.Screen name='stripe-payment' component={CardFormScreen} />
   <Homestack.Screen name='Parking_Stack' component={Parking_Stack} options={{headerLeft:()=>(<Go_back/>),headerTitle:'Reservation',headerStyle:{backgroundColor:'#00BFFF',height:48},headerTitleStyle:[styles.headerTitle,{textAlign:'left'}] }} />
   </Homestack.Navigator>
   )

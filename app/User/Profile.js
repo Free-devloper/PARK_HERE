@@ -1,4 +1,4 @@
-import React, { Component,useState } from 'react';
+import React, { Component,useState, useEffect } from 'react';
 import {
   StyleSheet,
   Text,
@@ -9,8 +9,9 @@ import {
 import ImagePicker from 'react-native-image-picker'
 import Icon from 'react-native-vector-icons/Ionicons'
 import { Button } from 'react-native-paper';
+import database from '../Firebase';
 
-export default Profile=({props})=>{
+export default Profile=({props,User})=>{
   const [imageurl, setImageurl] = useState({value: '../assets/avatar6.png'});
   const imageoptions = {
     title: 'Select Avatar',
@@ -20,6 +21,7 @@ export default Profile=({props})=>{
       path: 'images',
     },
   };
+  const[user_data,setuserdata]=useState('');
   const Go_back=()=>{
     return(
       <TouchableOpacity
@@ -34,7 +36,7 @@ export default Profile=({props})=>{
       console.log('Response = ', response);
     
       if (response.didCancel) {
-        console.log('User cancelled image picker');
+        console.log(User.name);
       } else if (response.error) {
         console.log('ImagePicker Error: ', response.error);
       } else if (response.customButton) {
@@ -55,11 +57,10 @@ export default Profile=({props})=>{
           </View>
           <Image style={styles.avatar} source={require('../assets/avatar6.png')}/>
           <View style={styles.body}>
-          <View style={styles.bodyContent}><TouchableOpacity onPress={()=>showpicker()} style={styles.buttonContaineruplod}><Icon name='md-cloud-upload' size={18} style={{color:'#fff'}} /><Text style={{color:'#fff',fontWeight:'bold',marginLeft:3}}>Upoad</Text></TouchableOpacity></View>
             <View style={styles.bodyContent}>
-              <Text style={styles.name}>David Jhons</Text>
+    <Text style={styles.name}>{User.name}</Text>
               <Text style={styles.info}>Regular User</Text>
-              <Text style={styles.description}></Text>
+    <Text style={styles.description}>{User.email}</Text>
               <TouchableOpacity style={styles.buttonContainer}>
                 <Text>Change Password</Text>  
               </TouchableOpacity>              

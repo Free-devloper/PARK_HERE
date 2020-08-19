@@ -21,10 +21,10 @@ class Parking_sens extends Component {
     Add_listner(){
         database().ref('/Parkinglots/'+this.props.Reservation_data.reservationdata.ParkingLotid+'/slots/'+this.props.Reservation_data.reservationdata.sLot_id).on('value',(snpshot=>{
             this.setState({parking_data:snpshot.val()});
-            if(this.state.parking_data.status==0&&this.state.parking_status==true)
+            if(this.state.parking_data.status=="0"&&this.state.parking_status==true)
             {
                 this.createTwoButtonAlertunpark();
-            }else if(this.state.parking_data.status==1&&this.state.parking_status==false)
+            }else if(this.state.parking_data.status=="1"&&this.state.parking_status==false)
             {
              this.createTwoButtonAlert();
             }
@@ -58,11 +58,6 @@ class Parking_sens extends Component {
             "Did you UN-Parked",
             "Have you un-parked on the Reserved slot?",
             [
-              {
-                text: "Not me",
-                onPress: () => {},
-                style: "cancel"
-              },
               { text: "Yes", onPress: () =>{
                   this.Remove_Reservation();
                   this.setState({parking_status:false})

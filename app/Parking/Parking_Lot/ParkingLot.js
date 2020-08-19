@@ -325,7 +325,7 @@ onCancel={hideDatePicker}
                 if(available_slots.includes(slot[1].id))
                 {
                 }else{
-                if(slot[1].slot_status=='active')
+                if(slot[1].slot_status=='active'&&slot[1].status!=="0")
                 {
                   slots_counter++;
                 return(

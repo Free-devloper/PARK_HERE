@@ -41,7 +41,7 @@ export default Walletcomp=({props})=>{
               <Text style={styles.info}>Regular User</Text>
               <Text style={styles.description}></Text>
               
-              <TouchableOpacity style={styles.buttonContainer}>
+              <TouchableOpacity style={styles.buttonContainer} onPress={()=>{props.navigation.navigate('stripe-payment')}}  >
                 <Text style={{color:'white'}}>Recharge Wallet</Text>  
               </TouchableOpacity>              
               <TouchableOpacity style={styles.buttonContainerred}>
